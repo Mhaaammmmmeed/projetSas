@@ -203,7 +203,8 @@ void afficherEtudiant(int id)
     {
         if (etudiants[i].id == id)
         {   printf("\n");
-            printf("les details d'etudiants a numero unique: %d\n", etudiants[i].id);
+            printf("les details d'etudiants est :\n");
+            printf("Numero unique: %d \n", etudiants[i].id);
             printf("Nom: %s\n", etudiants[i].nom);
             printf("Prenom: %s\n", etudiants[i].prenom);
             printf("Date de naissance: %d / %d / %d \n", etudiants[i].date.jour,etudiants[i].date.mois,etudiants[i].date.anne);
@@ -371,7 +372,7 @@ int calculerNombreEtudiantsInscri()
     {
         for (int i = 0; i < nmbrAjouter; i++)
         {
-            if (strcmp(etudiants[i].departement,depart))
+            if (strcmp(etudiants[i].departement,depart)==0)
             {
                 afficherEtudiant(etudiants[i].id);
             }
@@ -452,7 +453,7 @@ int main()
 
 
         do
-        {
+        {                        printf("\n");
             printf("\t\t\t\t\t--- <<  MENU PRINCIPAL  >> ---\n");
             printf("\n ");
             printf("1. Ajouter un etudiant\n");
@@ -501,11 +502,13 @@ int main()
                 modifierEtudiant(idModifier);
                 break;
             case 3:
+                printf("\n");
                 printf("Entrez le numero unique de l'etudiant a supprimer: ");
                 scanf("%d", &idSuprimer);
                 supprimerEtudiant(idSuprimer);
                 break;
             case 4:
+                printf("\n");
                 do
                 {
                     printf("Entrez le numero unique de l'etudiant a afficher: ");
@@ -524,48 +527,57 @@ int main()
                 printf("Le moyenne de departements %s est :%.2f\n",departMoyenne,calculeMoyenneChaqueDepart(departMoyenne));
                 break;
             case 7:
+                printf("\n");
                 printf("Total d'etudiants inscri est : %d",calculerNombreEtudiantsInscri());
                 break;
             case 8:
+                printf("\n");
                 printf("Les etudiante ayant les meilleures note est : \n");
                 etudiantsAyantLesMeilleuresNotes();
                 break;
 
 
             case 9:
-
+                printf("\n");
                 printf("Entre le seuil :");
                 scanf("%f",&seuil);
+                printf("\n");
                 printf("les etudiants ayant une moyenne generale superieure à un certain seuil : ");
                 etudiantAyantUnM(seuil);
                 break;
             case 10:
-                printf("Entrer le departement que vous voullez voir nombre d'ainscription" );
+                printf("\n");
+                printf("Entrer le departement que vous voullez voir nombre d'ainscription :" );
                 scanf("%s",departInscri);
-
+                printf("\n");
                 printf("Le nombre d'etudiants dans chaque departement: %d \n",afficheNombreEtudiantParDepart(departInscri));
                 break;
             case 11:
-                printf("Entrez le nom de l'étudiant à rechercher: ");
+                printf("\n");
+                printf("Entrez le nom de l'etudiant a rechercher: ");
                 scanf("%s", nom);
                 rechercherEtudiant(nom);
                 break;
             case 12:
-
+                printf("\n");
                 printf("Entrez le departemete a rechercher: ");
                 scanf("%s", departRecherche);
+                printf("\n");
                 printf("liste des etudiants inscrits dans un departement specifique :\n");
                 afficheListeEtudiantsDansChaqueDepart(departRecherche);
 
                 break;
             case 13:
+                printf("\n");
                 printf("le tri par note :\n");
                 tri();
                 break;
             case 14:
+                printf("\n");
                 triStatusReussite();
                 break;
             case 15:
+                printf("\n");
                 printf("Au revoir !\n");
                 break;
             default:
